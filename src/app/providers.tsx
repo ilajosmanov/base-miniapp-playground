@@ -1,5 +1,3 @@
-"use client";
-
 import FrameProvider from "~/components/providers/FrameProvider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
