@@ -3,9 +3,12 @@ import { METADATA } from "../../../lib/utils";
 export async function GET() {
   const config = {
     accountAssociation: {
-      header: process.env.NEXT_HEADER_TOKEN,
-      payload: process.env.NEXT_PAYLOAD_TOKEN,
-      signature: process.env.NEXT_SIGNATURE_TOKEN,
+      header: "",
+      payload: "",
+      signature: "",
+      // header: process.env.NEXT_HEADER_TOKEN,
+      // payload: process.env.NEXT_PAYLOAD_TOKEN,
+      // signature: process.env.NEXT_SIGNATURE_TOKEN,
     },
     frame: {
       version: "1",
@@ -42,7 +45,7 @@ export async function GET() {
     baseBuilder: {
       allowedAddresses: ["0x8342A48694A74044116F330db5050a267b28dD85"],
     },
-  };
+  } as const;
 
   return Response.json(config);
 }
